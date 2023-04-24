@@ -209,21 +209,29 @@ $connection = new mysqli($DEFAULT_DB_HOST, $DEFAULT_DB_USER, $DEFAULT_DB_PASSWOR
 
 // with IF ELSE condition;
 
-$query1 = "SET @p0='4'";
-$connection->query($query1);
+// $query1 = "SET @p0='4'";
+// $connection->query($query1);
 
-$query2 = "SET @p1='23'";
-$connection->query($query2);
+// $query2 = "SET @p1='23'";
+// $connection->query($query2);
 
-$query3 = "CALL `getIfElseDeta`(@p0, @p1)";
-$connection->query($query3);
+// $query3 = "CALL `getIfElseDeta`(@p0, @p1)";
+// $connection->query($query3);
 
-$query4 = "SELECT @p1 AS `result_is`";
-$result = $connection->query($query4);
+// $query4 = "SELECT @p1 AS `result_is`";
+// $result = $connection->query($query4);
+// $data = $result->fetch_assoc();
+
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
+
+$connection->multi_query("CALL `getCaseData`(@p0); SELECT @p0 AS `value_is`;");
+$connection->next_result();
+$result = $connection->store_result();
 $data = $result->fetch_assoc();
-
-
-
 echo "<pre>";
 print_r($data);
 echo "</pre>";
