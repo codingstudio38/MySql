@@ -232,6 +232,19 @@ $connection->multi_query("CALL `getCaseData`(@p0); SELECT @p0 AS `value_is`;");
 $connection->next_result();
 $result = $connection->store_result();
 $data = $result->fetch_assoc();
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
+/*
+basic command
+SHOW PROCEDURE STATUS;
+SHOW PROCEDURE STATUS WHERE db='samaj-demo';
+SHOW PROCEDURE STATUS WHERE name LIKE '%getAllData%';
+SHOW CREATE PROCEDURE getAllData;
+DROP PROCEDURE IF EXISTS getAllData;
+*/
 echo "<pre>";
 print_r($data);
 echo "</pre>";
