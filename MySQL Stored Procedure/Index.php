@@ -55,13 +55,18 @@ BEGIN
    DECLARE placeOfBirth VARCHAR(255) DEFAULT "";
    DECLARE playerCountry VARCHAR(255) DEFAULT "";
    DECLARE cur CURSOR FOR
+
    SELECT ID, First_Name, Last_Name, Date_Of_Birth, Place_Of_Birth, Country FROM Players;
+
    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
    OPEN cur;
    label:LOOP
    FETCH cur INTO playerID, firstName, lastName, DOB, placeOfBirth, playerCountry;
+   
    IF done = 1 THEN LEAVE label;
    END IF;
+
    SELECT CONCAT(playerID,' ', firstName,' ', lastName, ' ', DOB, ' ', placeOfBirth, ' ', playerCountry) AS PlayerData;
    END LOOP label;
    CLOSE cur;

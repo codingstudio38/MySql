@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2023 at 03:12 AM
+-- Generation Time: Apr 29, 2023 at 03:28 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -278,7 +278,7 @@ CREATE TABLE `bank_mst` (
 --
 
 INSERT INTO `bank_mst` (`id`, `bank_code`, `bank_name`, `ifsc_code`, `addrerss`, `created_at`, `updated_at`) VALUES
-(1, 3, 'UCO BANK, MAIN BRANCH, CUTTACK', NULL, 'CUTTACK', NULL, NULL),
+(1, 38, 'UCO BANK, MAIN BRANCH, CUTTACK', NULL, 'CUTTACK', NULL, NULL),
 (2, 34, 'CUTTACK URBAN CO-OP BANK', NULL, 'CUTTACK', NULL, NULL),
 (3, 10, 'S.B.I., BUXIBAZAR, CUTTACK', NULL, 'BUXIBAZAR\r\nCUTTACK', NULL, NULL),
 (4, 60, 'P.N.B., BUXIBAZAR, CUTTACK', NULL, 'GOPABANDHU BAHWAN\r\nBUXI BAZAR\r\nCUTTACK', NULL, NULL),
