@@ -893,3 +893,22 @@ SELECT *, substring_index(`value`,".",1) as `fit`,substring(`value`,position("."
 SELECT *, substring_index(`value`,".",1) as `fit`,substring(`value`,position("." in `value`)+1) as `inch` FROM
 `users_meta` WHERE `database`='users_data' AND `key` LIKE 'ht_tbl' AND (CAST(substring_index(`value`,".",1) AS SIGNED)
 >= 5 OR CAST(substring(`value`,position("." in `value`)+1) AS SIGNED) >= 10)
+
+
+
+
+
+//////////////////////////////////////////
+VIEW COMMAND
+
+-> CREATE VIEW `view_name` AS SELECT * FROM `bank_mst`;
+
+-> SELECT * from myquery;
+
+-> ALTER VIEW `view_name` AS SELECT id,bank_name FROM `bank_mst`;
+
+-> CREATE OR REPLACE VIEW `view_name` AS SELECT id,bank_name FROM `bank_mst`;
+
+-> RENAME TABLE `view_name` TO `new_view_name`;
+
+-> DROP VIEW `view_name`;

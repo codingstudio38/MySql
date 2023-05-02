@@ -4,7 +4,7 @@ DELIMITER $$
 
 CREATE PROCEDURE getAllData()
 
-BEGIN
+BEGIN 
 
 SELECT * from `bank_mst`;
 
