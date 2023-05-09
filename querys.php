@@ -912,3 +912,10 @@ VIEW COMMAND
 -> RENAME TABLE `view_name` TO `new_view_name`;
 
 -> DROP VIEW `view_name`;
+
+
+//////////////////////////////////////////
+INDEX COMMAND
+
+-> CREATE INDEX index_name ON tabel_name(column1,....);
+-> DROP INDEX index_name ON tabel_name;
