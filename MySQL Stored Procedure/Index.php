@@ -205,7 +205,7 @@ $connection = new mysqli($DEFAULT_DB_HOST, $DEFAULT_DB_USER, $DEFAULT_DB_PASSWOR
 // $query3 = "SELECT @p0 AS `tbl_value`;";
 // $result = $connection->query($query3);
 // $data = $result->fetch_assoc();
-
+ 
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------

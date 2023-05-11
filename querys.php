@@ -918,4 +918,4 @@ VIEW COMMAND
 INDEX COMMAND
 
 -> CREATE INDEX index_name ON tabel_name(column1,....);
--> DROP INDEX index_name ON tabel_name;
+-> DROP INDEX index_name ON tabel_name;  
