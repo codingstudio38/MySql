@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2023 at 03:28 AM
+-- Generation Time: May 28, 2023 at 05:33 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -25828,6 +25828,22 @@ INSERT INTO `qualification_level_mst` (`id`, `QUALIFICATION_LEVEL_CODE`, `QUALIF
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `show_all_banks`
+-- (See below for the actual view)
+--
+CREATE TABLE `show_all_banks` (
+`id` int(10) unsigned
+,`bank_code` int(11)
+,`bank_name` varchar(255)
+,`ifsc_code` varchar(255)
+,`addrerss` varchar(255)
+,`created_at` timestamp
+,`updated_at` timestamp
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userlog`
 --
 
@@ -25954,6 +25970,15 @@ INSERT INTO `workplace` (`id`, `workplace_name`, `created_at`, `updated_at`) VAL
 (21, 'Bargarh', '2022-07-12 11:54:33', '2022-07-12 11:54:33'),
 (22, 'Jeypore', '2022-07-12 11:54:48', '2022-07-12 11:54:48'),
 (23, 'Kolkota', '2022-11-21 17:11:44', '2022-11-21 17:11:44');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `show_all_banks`
+--
+DROP TABLE IF EXISTS `show_all_banks`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `show_all_banks`  AS SELECT `bank_mst`.`id` AS `id`, `bank_mst`.`bank_code` AS `bank_code`, `bank_mst`.`bank_name` AS `bank_name`, `bank_mst`.`ifsc_code` AS `ifsc_code`, `bank_mst`.`addrerss` AS `addrerss`, `bank_mst`.`created_at` AS `created_at`, `bank_mst`.`updated_at` AS `updated_at` FROM `bank_mst``bank_mst`  ;
 
 --
 -- Indexes for dumped tables
