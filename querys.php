@@ -919,3 +919,24 @@ INDEX COMMAND
 
 -> CREATE INDEX index_name ON tabel_name(column1,....);
 -> DROP INDEX index_name ON tabel_name;  
+
+
+
+//////////////////////////////////
+CAST() AND CONVERT()->for change data type
+
+SELECT *,convert(created_date,date) as `checkType` FROM angular12.angularuser_tbl;
+SELECT *,convert(created_date,date) as `checkType`,CAST(created_date as date) as `c_checkType` FROM angular12.angularuser_tbl;
+
+
+JSON_OBJECT()---------->
+SELECT *,JSON_OBJECT('id', tbl1.id, 'name', tbl1.name, 'email', tbl1.email) as plotDetails
+FROM angular12.angularuser_tbl as tbl1;
+
+JSON_ARRAY()---------->
+SELECT tbl1.*, 
+       (
+           SELECT JSON_ARRAY(JSON_OBJECT('id', tbl2.id, 'cname', tbl2.cname, 'cemail', tbl2.cemail))
+           FROM angular12.multiples_user_data as tbl2
+       ) as plotDetails
+FROM angular12.angularuser_tbl as tbl1;
