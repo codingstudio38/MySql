@@ -936,7 +936,9 @@ FROM angular12.angularuser_tbl as tbl1;
 JSON_ARRAY()---------->
 SELECT tbl1.*, 
        (
-           SELECT JSON_ARRAY(JSON_OBJECT('id', tbl2.id, 'cname', tbl2.cname, 'cemail', tbl2.cemail))
-           FROM angular12.multiples_user_data as tbl2
+           #SELECT GROUP_CONCAT(JSON_ARRAY(JSON_OBJECT('id', tbl2.id, 'token', tbl2.tokenable_type, 'tokenable_type', tbl2.tokenable_type)))
+           SELECT CONCAT('[',GROUP_CONCAT(JSON_OBJECT('id', tbl2.id, 'token', tbl2.tokenable_type, 'tokenable_type', tbl2.tokenable_type)), ']')
+           FROM myblog_logindetails_tbl as tbl2 
+           WHERE tbl2.tokenable_id = tbl1.id
        ) as plotDetails
-FROM angular12.angularuser_tbl as tbl1;
+FROM angularuser_tbl as tbl1;
