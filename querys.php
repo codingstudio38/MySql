@@ -942,3 +942,14 @@ SELECT tbl1.*,
            WHERE tbl2.tokenable_id = tbl1.id
        ) as plotDetails
 FROM angularuser_tbl as tbl1;
+
+
+
+current week start date and end date---------->
+
+SELECT date(DATE_SUB(NOW(), INTERVAL (WEEKDAY(NOW()) ) DAY)) AS week_start_date, 
+DAYNAME(date(DATE_SUB(NOW(), INTERVAL (WEEKDAY(NOW()) ) DAY))) AS start_day_name,
+date(DATE_ADD(NOW(), INTERVAL (6 - WEEKDAY(NOW())) DAY)) AS week_end_date,
+DAYNAME(date(DATE_ADD(NOW(), INTERVAL (6 - WEEKDAY(NOW())) DAY))) AS end_day_name,
+DAYNAME(NOW()) AS today_name,
+date(NOW()) AS current_date_;
