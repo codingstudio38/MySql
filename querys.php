@@ -953,3 +953,13 @@ date(DATE_ADD(NOW(), INTERVAL (6 - WEEKDAY(NOW())) DAY)) AS week_end_date,
 DAYNAME(date(DATE_ADD(NOW(), INTERVAL (6 - WEEKDAY(NOW())) DAY))) AS end_day_name,
 DAYNAME(NOW()) AS today_name,
 date(NOW()) AS current_date_;
+
+
+get data useing FIND_IN_SET subquery json data from another table (data like usersid->'1,2,3')---------->
+select *,
+       (
+          SELECT CONCAT('[',GROUP_CONCAT(JSON_OBJECT('intId', tbl2.intId, 'vchFullName', tbl2.vchFullName, 'vchLastName', tbl2.vchLastName,'vchImage',tbl2.vchImage,'vchEmailId',tbl2.vchEmailId,'sss',concat("'",replace(tbl1.vchto,",","','"),"'"))), ']')
+           FROM m_admin_user as tbl2 
+           WHERE  FIND_IN_SET(tbl2.intId, REPLACE(tbl1.vchto, ',', ',')) > 0
+       ) as `users_list`
+from  t_message as tbl1;
